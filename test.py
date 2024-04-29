@@ -12,13 +12,7 @@ import cv2
 
 net = model.get_model(args)
 
-pretrained_dict = torch.load(#args.load_path,
-# '/data_c/wcy/code/hapsr/experiment/unet_network_pac35g2_helen_x16/model/epoch115.pth',
-#'/data_c/wcy/code/hapsr/experiment/unet_network_pac35g2_helen/model/epoch166.pth',
-#'/data_c/wcy/code/hapsr/experiment/unet_network_pac35g2_sch_x4_helen_refine/model/epoch42.pth',
-#'/data_c/wcy/code/hapsr/experiment/unet_network_pac35g2_sch_x4/model/epoch16.pth',
-'/data_c/wcy/code/hapsr/experiment/unet_network_pac35g2_schd/model/epoch17.pth',
-# '/data_c/wcy/code/hapsr/experiment/unet_network_pac35g2_x16_sch/model/epoch11.pth',
+pretrained_dict = torch.load(args.load_path,
  map_location='cuda:0')
 print(util.get_parameter_number(net))
 net.load_state_dict(pretrained_dict)
