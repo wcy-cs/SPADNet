@@ -30,7 +30,7 @@ net.eval()
 val_psnr = 0
 val_ssim = 0
 with torch.no_grad():
-    os.makedirs(os.path.join('/data_c/wcy/code/spadnet/experiment/', args.writer_name, save_name), exist_ok=True)
+    os.makedirs(os.path.join('./experiment/', args.writer_name, save_name), exist_ok=True)
     net.eval()
 
     for batch, (lr, hr,  filename) in enumerate(testset):
@@ -40,11 +40,9 @@ with torch.no_grad():
         psnr1, _ = util.calc_metrics(hr[0].data.cpu(), sr[0].data.cpu(), crop_border=8)
         val_psnr = val_psnr + psnr1
         torchvision.utils.save_image(sr[0],
-                                     os.path.join('/data_c/wcy/code/spadnet/experiment/', args.writer_name, save_name,
+                                     os.path.join('./experiment/', args.writer_name, save_name,
                                                   '{}'.format(str(filename[0])[:-4]+".png")))
-        # img = cv2.cvtColor(util.tensor2uint(sr[0], data_range=1), cv2.COLOR_RGB2BGR)
-        # cv2.imwrite(os.path.join('/data_c/wcy/code/spadnet/experiment/', args.writer_name, save_name,
-        #                                            '{}'.format(str(filename[0])[:-4]+".png")), img)
+      
 
 
     print("Test psnr: {:.3f}".format(val_psnr / (len(testset))))
