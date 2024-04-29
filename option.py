@@ -15,7 +15,7 @@ parser.add_argument('--gpu_ids', type=int, default=1)
 parser.add_argument('--seed', type=int, default=1,
                     help='random seed')
 parser.add_argument('--device', default='cuda')
-parser.add_argument('--dir_data', type=str, default='/data_c/zhwzhong/Data/wcy/data/CelebA',#'/data/disk_c/lllwcy/data/DIC/CelebA',
+parser.add_argument('--dir_data', type=str, default='CelebA',
                     help='dataset directory')
 parser.add_argument('--data_train', type=str, default='train',
                     help='train dataset name')
@@ -63,7 +63,7 @@ parser.add_argument('--lr', type=float, default=1e-4,
                     help='learning rate')
 
 # Log specifications
-# parser.add_argument('--root', type=str, default='/data/disk_c/lllwcy/code/FAGFSR')
+
 parser.add_argument('--save', type=str, default='mynet',
                     help='file name to save')
 parser.add_argument('--save_test', type=str, default='mynet',
