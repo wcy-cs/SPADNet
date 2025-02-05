@@ -12,6 +12,7 @@
   publisher={IEEE}
 }
 ```
-
+## Environments
+torch 1.1.0
 ## Pretrained Model
  [BaiDu](https://pan.baidu.com/s/1WRTL-HL7ZSigBEFWftigew) passward: wgaj
